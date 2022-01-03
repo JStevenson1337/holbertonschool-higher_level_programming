@@ -17,5 +17,5 @@ while i <= 99:
         format_i = "{:02d}".format(i)
         print(format_i, end=', ')
     else:
-        print(format_i, end='\n')
+        print(i, end='\n')
     i += 1
