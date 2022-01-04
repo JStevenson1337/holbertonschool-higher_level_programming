@@ -4,4 +4,4 @@ for c in range(97, 122):
         continue
     else:
         print(chr(c), end = "")
-print("z")
+print("z", end= "")

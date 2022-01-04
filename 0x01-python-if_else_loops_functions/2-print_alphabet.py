@@ -2,5 +2,5 @@
 
 for c in range(97, 122):
     print(chr(c), end = "")
-print("z")
+print("z", end = "")
 
