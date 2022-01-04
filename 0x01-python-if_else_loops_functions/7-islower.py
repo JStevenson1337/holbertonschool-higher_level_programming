@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 def islower(c):
-    if (c >= 'a') & (c <= 'z'):
+    this = ord(c)
+    if (this >= 97) & (this <= 122):
         return (True)
     else:
         return (False)
