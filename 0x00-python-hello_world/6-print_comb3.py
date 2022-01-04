@@ -18,7 +18,7 @@ while i <= 9:
     while j <= 9:
         if (i < j) & (i != j):
             print("{}{}".format(i, j), end=', ')
-        elif ((i - j) == 1) & (i >= 8):
+        if ((i == 8) & (j == 9)):
             print("{}{}".format(i, j), end='\n')
         j += 1
     i += 1
