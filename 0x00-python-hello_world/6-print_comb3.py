@@ -13,6 +13,13 @@ You can only use no more than 2 loops in your code
 You are not allowed to store numbers or strings in a variable
 You are not allowed to import any module
 '''
-
-while True:
-    
+i, j = 0, 0
+while i <= 9:
+    while j <= 9:
+        if (i < j) & (i != j):
+            print("{}{}".format(i, j), end=', ')
+        elif ((i - j) == 1) & (i >= 8):
+            print("{}{}".format(i, j), end='\n')
+        j += 1
+    i += 1
+    j = 0
