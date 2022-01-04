@@ -1,6 +1,3 @@
 #!/usr/bin/python3
-
-i = 0
-while (i <= 98):
+for i in range(0, 99):
     print("{} = {}".format(i, hex(i)))
-    i = i + 1
