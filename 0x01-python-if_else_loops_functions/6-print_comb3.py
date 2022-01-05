@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
+
 i, j = 0, 0
 while i <= 9:
     while j <= 9:

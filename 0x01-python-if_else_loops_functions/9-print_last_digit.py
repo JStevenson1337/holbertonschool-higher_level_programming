@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def print_last_digit(number):
     while number != None:
         if number < 0:
