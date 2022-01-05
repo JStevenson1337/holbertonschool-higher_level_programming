@@ -2,7 +2,7 @@
 
 
 def print_last_digit(number):
-    while number != None:
+    while number is not None:
         if number < 0:
             number *= -1
         last_digit = number % 10
