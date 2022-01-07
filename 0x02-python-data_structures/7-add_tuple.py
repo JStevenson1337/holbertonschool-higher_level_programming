@@ -4,7 +4,8 @@
 def add_tuple(tuple_a=(), tuple_b=()):
 
     my_list = [tuple(iterable) for iterable in (tuple_a, tuple_b)]
-    
+    if len(my_list) == 0:
+        return ()
     while len(my_list) < 4:
 
         if len(my_list[0]) > len(my_list[1]):
