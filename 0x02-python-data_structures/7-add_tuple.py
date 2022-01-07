@@ -2,6 +2,9 @@
 
 
 def add_tuple(tuple_a=(), tuple_b=()):
+    if len(tuple_a) > 2 or len(tuple_b) > 2:
+        tuple_a = tuple_a[:2]
+        tuple_b = tuple_b[:2]
 
     my_list = [tuple(iterable) for iterable in (tuple_a, tuple_b)]
     if len(my_list) == 0:
