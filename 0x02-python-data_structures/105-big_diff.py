@@ -7,4 +7,3 @@ def big_diff(my_list=[]):
 
     my_list.sort()
     return my_list[-1] - my_list[0]
-
