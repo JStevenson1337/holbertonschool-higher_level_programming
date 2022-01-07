@@ -2,7 +2,5 @@
 
 
 def multiple_returns(sentence):
-    if sentence == "":
-        return tuple(len(sentence, None)), ""
-    else:
-        return tuple(len(sentence), sentence[0])
+    sentence_length = len(sentence)
+
