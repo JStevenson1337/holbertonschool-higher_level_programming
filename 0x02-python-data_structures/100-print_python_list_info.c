@@ -23,7 +23,5 @@ void print_python_list_info(PyObject *p)
 
     printf("Python list has %d bytes\n", PyList_Size(p) * sizeof(PyObject *));
     return;
-
-    
 }
 
