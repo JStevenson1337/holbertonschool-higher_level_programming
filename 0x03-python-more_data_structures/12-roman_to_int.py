@@ -7,22 +7,16 @@ def roman_to_int(roman_string):
             | len(roman_string) == 0:
         return 0
     else:
-        while (True):
-            if roman_string == "":
-                return 0
-            elif roman_string[0] == "I":
-                return 1 + roman_to_int(roman_string[1:])
-            elif roman_string[0] == "V":
-                return 5 + roman_to_int(roman_string[1:])
-            elif roman_string[0] == "X":
-                return 10 + roman_to_int(roman_string[1:])
-            elif roman_string[0] == "L":
-                return 50 + roman_to_int(roman_string[1:])
-            elif roman_string[0] == "C":
-                return 100 + roman_to_int(roman_string[1:])
-            elif roman_string[0] == "D":
-                return 500 + roman_to_int(roman_string[1:])
-            elif roman_string[0] == "M":
-                return 1000 + roman_to_int(roman_string[1:])
+        roman_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500,
+                      'M': 1000}
+        roman_list = list(roman_string)
+        roman_int = 0
+        for i in range(len(roman_list)):
+            if i == 0:
+                roman_int += roman_dict[roman_list[i]]
+            elif roman_dict[roman_list[i]] > roman_dict[roman_list[i - 1]]:
+                roman_int += roman_dict[roman_list[i]] - \
+                            2 * roman_dict[roman_list[i - 1]]
             else:
-                return 0
+                roman_int += roman_dict[roman_list[i]]
+        return roman_int
