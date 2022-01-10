@@ -2,10 +2,10 @@
 
 
 def roman_to_int(roman_string):
-    if roman_string is not isinstance(roman_string, str):
-        return 0
-    elif len(roman_string) <= 0:
-        return 0
+    if roman_string == "":
+        return None
+    elif type(roman_string) != str:
+        return None
     else:
         roman_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500,
                       'M': 1000}
@@ -19,4 +19,5 @@ def roman_to_int(roman_string):
                             2 * roman_dict[roman_list[i - 1]]
             else:
                 roman_int += roman_dict[roman_list[i]]
+        
         return roman_int
