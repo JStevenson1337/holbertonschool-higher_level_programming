@@ -32,3 +32,11 @@ try:
     print(my_square_4.__dict__)
 except Exception as e:
     print(e)
+
+
+try:
+    my_square = Square("3")
+    print(type(my_square))
+    print(my_square.__dict__)
+except Exception as e:
+    print(e)
