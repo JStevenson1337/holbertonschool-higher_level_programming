@@ -26,10 +26,11 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = value
 
-    @size.getter
-    def size(self):
-        if type(self.__size) != int:
-            raise TypeError("size must be an integer")
-        if self.__size < 0:
-            raise ValueError("size must be >= 0")
-        return self.__size
+
+    def my_print(self):
+        if self.__size <= 0:
+            print()
+        for i in range(self.__size):
+            for j in range(self.__size):
+                print("#", end="")
+            print()
