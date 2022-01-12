@@ -95,3 +95,10 @@ class Square:
             for j in range(self.__size):
                 print("#", end="")
             print()
+
+
+print(getattr(Square, "__doc__"))
+print(Square.my_print.__doc__)
+print(Square.area.__doc__)
+print(Square.size.__doc__)
+print(Square.__doc__)
