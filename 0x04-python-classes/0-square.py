@@ -6,4 +6,3 @@ class Square:
     "A simple Square class that defines a square by its size."
     def __init__(self, size):
         self.__size = size
-
