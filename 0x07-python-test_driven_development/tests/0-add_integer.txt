@@ -1,4 +1,5 @@
->>> print("{}".format(a))
+>>> @test.add_integer.py:2: TypeError
+>>> assert("{}".format(a))
 <class '__main__.A'>
 >>> print("{}".format(b))
 <class '__main__.B'>
