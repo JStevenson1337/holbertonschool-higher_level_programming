@@ -1,8 +1,4 @@
 #!/usr/bin/python3
-import dis
-from io import open_code
-import opcode
-
 """A simple Square class that defines a square by its size."""
 
 
