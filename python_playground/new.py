@@ -1,21 +1,30 @@
 #!/usr/bin/python3
 
-from functools import lru_cache
-import functools
 
 
+def uniq(list):
+    """ Returns unique values of a list """
+    u_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    for item in list:
+        if item not in u_list:
+            u_list.append(item)
+    return u_list
+
+# list = [1, 2, 3, 4, 5, 6, 7, 8, 8, 8, 9, 10, (1, 2, 3), (1, 2, 3)]
+# list = uniq(list)
+list = {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10}
+list = uniq(list)
+
+# import builtins
+# from inspect import getmembers, isclass, isfunction
+
+# for (name, memeber) in getmembers(builtins, isclass):
+#     print(name)
 
 
-import builtins
-from inspect import getmembers, isclass, isfunction
-
-for (name, memeber) in getmembers(builtins, isclass):
-    print(name)
-
-
-# help(functools.lru_cache)
-# my_help = dir([])
-my_help_class = help(["__class__"])
+# # help(functools.lru_cache)
+# # my_help = dir([])
+# my_help_class = help(["__class__"])
 
 # class User:
 #     """ 
@@ -116,3 +125,5 @@ my_help_class = help(["__class__"])
 
 # cartesian_product = [(a, b) for a in A for b in B]
 # print(cartesian_product)
+
+

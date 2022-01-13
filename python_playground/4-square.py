@@ -1,8 +1,4 @@
 #!/usr/bin/python3
-import dis
-from io import open_code
-import opcode
-
 """A simple Square class that defines a square by its size."""
 
 
@@ -97,5 +93,12 @@ class Square:
             print()
         for i in range(self.__size):
             for j in range(self.__size):
-                print("#", end="")
+                print("#")
             print()
+
+
+print(getattr(Square, "__doc__"))
+print(Square.my_print.__doc__)
+print(Square.area.__doc__)
+print(Square.size.__doc__)
+print(Square.__doc__)

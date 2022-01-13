@@ -1,8 +1,6 @@
-#include <ctype.h>
-#include </usr/include/python3.9/Python.h>
+#include <ctypes.h>
 #include <stdio.h>
-// #include <cpython/initconfig.h>
-
+#include <cpython/initconfig.h>
 
 
 
