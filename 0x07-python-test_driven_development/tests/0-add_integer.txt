@@ -1,0 +1,6 @@
+>>> print("{}".format(a))
+<class '__main__.A'>
+>>> print("{}".format(b))
+<class '__main__.B'>
+>>> add_integer(5,2)
+7
