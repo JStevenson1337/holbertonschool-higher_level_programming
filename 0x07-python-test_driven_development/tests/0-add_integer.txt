@@ -1,7 +1,4 @@
->>> @test.add_integer.py:2: TypeError
->>> assert("{}".format(a))
-<class '__main__.A'>
->>> print("{}".format(b))
-<class '__main__.B'>
->>> add_integer(5,2)
-7
+>>> add_integer = __import__("0-add_integer").add_integer
+
+>>> add_integer(1, 2)
+3
