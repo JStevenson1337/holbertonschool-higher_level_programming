@@ -4,6 +4,9 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="py_scripting" />
+    <orderEntry type="module" module-name="Flask-Web-App" />
+    <orderEntry type="module" module-name="Python-3.10.0" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="GOOGLE" />

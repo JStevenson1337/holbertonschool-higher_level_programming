@@ -1,47 +1,54 @@
 #!/usr/bin/python3
 
+print("Hello World!")
 
 
-def uniq(list):
-    """ Returns unique values of a list """
-    u_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    for item in list:
-        if item not in u_list:
-            u_list.append(item)
-    return u_list
 
-# list = [1, 2, 3, 4, 5, 6, 7, 8, 8, 8, 9, 10, (1, 2, 3), (1, 2, 3)]
+
+
+
+
+#
+# def uniq(list):
+#     """ Returns unique values of a list """
+#     u_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+#     for item in list:
+#         if item not in u_list:
+#             u_list.append(item)
+#     return u_list
+#
+# # list = [1, 2, 3, 4, 5, 6, 7, 8, 8, 8, 9, 10, (1, 2, 3), (1, 2, 3)]
+# # list = uniq(list)
+# list = {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10}
 # list = uniq(list)
-list = {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10}
-list = uniq(list)
-
-# import builtins
-# from inspect import getmembers, isclass, isfunction
-
-# for (name, memeber) in getmembers(builtins, isclass):
-#     print(name)
-
-
-# # help(functools.lru_cache)
-# # my_help = dir([])
-# my_help_class = help(["__class__"])
-
-# class User:
-#     """ 
-#     A Member of Class User storing name, birthday
-#     """
-#     def __init__(self, fullname, birthday) -> None:
-        
-#         self.name  = fullname
-#         self.birthday = birthday # yyyymmdd
-
-
-#         name_peices = fullname.split(" ")
-#         self.first_name = name_peices[0]
-#         self.last_name = name_peices[-1]
-
-#     def age(self):
-#         pass
+#
+# # import builtins
+# # from inspect import getmembers, isclass, isfunction
+#
+# # for (name, memeber) in getmembers(builtins, isclass):
+# #     print(name)
+#
+#
+# # # help(functools.lru_cache)
+# # # my_help = dir([])
+# # my_help_class = help(["__class__"])
+#
+# # class User:
+# #     """
+# #     A Member of Class User storing name, birthday
+# #     """
+# #     def __init__(self, fullname, birthday) -> None:
+#
+# #         self.name  = fullname
+# #         self.birthday = birthday # yyyymmdd
+#
+#
+# #         name_peices = fullname.split(" ")
+# #         self.first_name = name_peices[0]
+# #         self.last_name = name_peices[-1]
+#
+# #     def age(self):
+# #         pass
     
     
 # print(help(User))
