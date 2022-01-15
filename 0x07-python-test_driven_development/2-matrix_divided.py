@@ -5,7 +5,7 @@
 def matrix_divided(matrix, div):
     """ Controlls the flow of the program
     Args:
-        matrix ([[list]]):
+        matrix ([[list]]): list of lists
         div (int or float): division value
     Returns:
         matrix:
@@ -24,6 +24,7 @@ def matrix_divided(matrix, div):
         else:
             return split_list(result, len(matrix))
 
+
 def split_list(a_list, number):
     """ Split list into equal parts
     Args:
@@ -33,11 +34,14 @@ def split_list(a_list, number):
         list: list of lists
     """
     splitNumber = len(a_list) // number
-    result = [a_list[x:x+splitNumber] for x in range(0, len(a_list), splitNumber)]
+    result = [a_list[x:x+splitNumber] for x in
+              range(0, len(a_list), splitNumber)]
     if(len(result) > number):
-      result[len(result) - 2] = result[len(result) - 2]+ result[len(result)-1]
-      result.pop()
+        result[len(result) - 2] = \
+            result[len(result) - 2] + result[len(result) - 1]
+        result.pop()
     return result
+
 
 def identify(matrix):
     """ confirm that matrix is a list of lists
@@ -47,14 +51,19 @@ def identify(matrix):
         bool: True if matrix is a list of lists
     """
     if type(matrix) is not list:
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix \
+            (list of lists) of integers/floats")
     if not matrix:
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix \
+                        (list of lists) of integers/floats")
     if not measure(matrix):
-        raise TypeError("Each row of the matrix must have the same size")
+        raise TypeError("Each row of the \
+                        matrix must have the same size")
     if not all(type(i) in (int, float) for i in matrix[0]):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix \
+            (list of lists) of integers/floats")
     return True
+
 
 def mutate(matrix, div):
     """ Divide element in matrix by div
@@ -67,9 +76,10 @@ def mutate(matrix, div):
         try:
             and_done = [round(j / div, 2) for i in matrix for j in i]
         except ZeroDivisionError:
-           raise ZeroDivisionError("division by zero")
+            raise ZeroDivisionError("division by zero")
         else:
             return and_done
+
 
 def measure(matrix):
     """ confirm that all rows are the same length
@@ -80,7 +90,7 @@ def measure(matrix):
     """
     looper = iter(matrix)
     measure = len(next(looper))
-    if not all(len(l) == measure for l in looper):
+    if not all(len(lists) == measure for lists in looper):
         return False
     else:
         return True
