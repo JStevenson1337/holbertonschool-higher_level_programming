@@ -16,7 +16,7 @@ def text_indentation(text):
         for ltr in text:
             if ltr in spec_char:
                 print(ltr)
-                print("\n\n")
+                print("")
             else:
                 print(ltr, end="")
         break
