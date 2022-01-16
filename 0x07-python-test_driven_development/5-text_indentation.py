@@ -11,18 +11,16 @@ def text_indentation(text):
         raise TypeError("text must be a string")
     if text == "":
         raise ValueError("text must not be empty")
-    i = 0
-    j = 0
-    while i < len(text):
-        if text[i] == "." or text[i] == "?" or text[i] == ":":
-            print(text[i])
-            print("")
-            i += 1
-        else:
-            print(text[i], end="")
-            i + 1
-    print("")
-    print("")
+    spec_char = [".", "?", ":"]
+    while True:
+        for ltr in text:
+            if ltr in spec_char:
+                print(ltr)
+                print("\n\n")
+            else:
+                print(ltr, end="")
+        break
+
 
 
 
