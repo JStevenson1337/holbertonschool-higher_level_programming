@@ -15,7 +15,7 @@ def add_integer(a, b=98):
         if isinstance(a, int):
             pass
         elif isinstance(a, float):
-            a = int(a)
+            a = round(int(a), 0)
         else:
             raise TypeError
     except Exception:
@@ -25,7 +25,7 @@ def add_integer(a, b=98):
         if isinstance(b, int):
             pass
         elif isinstance(b, float):
-            b = int(b)
+            b = round(int(b), 2)
         else:
             raise TypeError
     except Exception:
