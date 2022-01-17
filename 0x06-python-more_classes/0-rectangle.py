@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" A Rectangle Class """
 
 
 class Rectangle:
@@ -38,10 +39,3 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         else:
             return self.__height
-
-    @width.setter(self, value):
-    """ Setter for width.
-    Returns: int: The width of the rectangle.
-    Raises: TypeError: If width is not an integer.
-    """
-    pass
