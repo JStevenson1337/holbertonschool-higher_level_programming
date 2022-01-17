@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ Divides all elements of a matrix"""
+import dis
 
 
 def matrix_divided(matrix, div):
@@ -7,7 +8,8 @@ def matrix_divided(matrix, div):
     Args:
         matrix ([[list]]): list of lists
         div (int or float): division value
-    Returns:  list of lists
+    Returns:
+        matrix:
     """
     try:
         identify(matrix)
@@ -93,3 +95,6 @@ def measure(matrix):
         return False
     else:
         return True
+
+
+dis.disassemble()

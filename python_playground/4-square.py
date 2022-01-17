@@ -2,6 +2,9 @@
 """A simple Square class that defines a square by its size."""
 
 
+from dis import disassemble
+
+
 class Square:
     """A simple Square class that defines a square by its size.
 
@@ -19,7 +22,6 @@ class Square:
         """Initializes the square.
         `size` must be an integer and >= 0.
         `pep8` recommends to use `self.__size` instead of `self.size`.
-        
         Returns:
             None
         """
@@ -96,9 +98,11 @@ class Square:
                 print("#")
             print()
 
+import dis
 
 print(getattr(Square, "__doc__"))
 print(Square.my_print.__doc__)
-print(Square.area.__doc__)
-print(Square.size.__doc__)
-print(Square.__doc__)
+
+# print(Square.area.__doc__)
+# print(Square.size.__doc__)
+# print(Square.__doc__)

@@ -22,3 +22,4 @@ size must be an integer
 
 >>> print_square("this_is_not_a_number")
 size must be an integer
+

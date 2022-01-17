@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" Write a function that prints a text with 2 new lines after each of these characters: ., ? and : """
+""" Write a function that prints a \
+    text with 2 new lines after \
+    each of these characters: ., ? and : """
 
 
 def text_indentation(text):
@@ -20,13 +22,3 @@ def text_indentation(text):
             else:
                 print(ltr, end="")
         break
-
-
-
-
-# Write a function that prints a text with 2 new lines after each of these characters: ., ? and :
-
-# Prototype: def text_indentation(text):
-# text must be a string, otherwise raise a TypeError exception with the message text must be a string
-# There should be no space at the beginning or at the end of each printed line
-# You are not allowed to import any module
