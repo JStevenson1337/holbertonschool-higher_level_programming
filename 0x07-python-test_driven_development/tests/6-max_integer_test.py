@@ -54,7 +54,7 @@ class TestMaxInteger(unittest.TestCase):
     def test_long_negative_elements(self):
         """Test long negative elements
         """
-        self.assertEqual(max_integer([-1, -2, -3, -4, -5]), -1)
+        self.assertEqual(max_integer([-1, -2, -3, -4, -5, -6, -7]), -1)
 
     def doCleanups(self) -> None:
         return super().doCleanups()

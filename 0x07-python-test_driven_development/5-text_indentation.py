@@ -5,20 +5,20 @@
 
 
 def text_indentation(text):
-    """ [summary]
+    """ Write a function that prints stuff
 
-        Args: text ([type]): [description]
+    Args:  text (str): text to print
     """
-    if type(text) is not str:
+    if type(text) is not str or text == "":
         raise TypeError("text must be a string")
-    if text == "":
-        raise ValueError("text must not be empty")
     spec_char = [".", "?", ":"]
     while True:
         for ltr in text:
             if ltr in spec_char:
                 print(ltr)
-                print("")
+                print()
+                print('', end="", flush=True)
+
             else:
-                print(ltr, end="")
+                print(ltr, end="", flush=True)
         break

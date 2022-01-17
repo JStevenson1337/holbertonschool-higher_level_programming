@@ -19,7 +19,7 @@ def say_my_name(first_name, last_name=""):
 
 
 def is_strings(id, value):
-    """
+    """ Check if value is a string
     Args:
         id (str): id
         value (str): name of the variable
