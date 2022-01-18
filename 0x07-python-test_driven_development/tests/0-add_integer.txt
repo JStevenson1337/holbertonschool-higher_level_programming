@@ -24,3 +24,5 @@
 >>> print(add_integer(100.3, -2))
 98
 
+>>> print(add_integer('inf'))
+a must be an integer

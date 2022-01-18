@@ -4,30 +4,69 @@
 
 class Rectangle:
     """
-        Initializes the rectangle.
-        `width` and `height` must be integers and >= 0.
-        `pep8` recommends to use `self.__width` instead of `self.width`.
-        Returns:
-            None
+        Class Rectangle:
     """
     def __init__(self, width, height):
-        self.__width = width
-        self.__height = height
+        """
+            __init__ method:
+        """
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
-        if self.width is not (type(int)):
-            raise TypeError("width must be an integer")
-        elif self.width < 0:
-            raise ValueError("width must be >= 0")
-        else:
-            return self.__width
+        """
+            Returns the width of the rectangle.
+            Returns:
+                The width of the rectangle
+        """
+        return self.__width
+
 
     @property
     def height(self):
-        if self.height is not (type(int)):
+        """
+            Returns the height of the rectangle.
+            Returns:
+                The height of the rectangle
+        """
+        return self.__height
+
+
+    @width.setter
+    def width(self, value):
+        if type(value) is not int:
+            raise TypeError("width must be an integer")
+        elif value < 0:
+            raise ValueError("width must be >= 0")
+        else:
+            return (self.__width = value)
+
+    @height.setter
+    def height(self, value):
+        if type(value) is not int:
             raise TypeError("height must be an integer")
-        elif self.height < 0:
+        elif value < 0:
             raise ValueError("height must be >= 0")
         else:
-            return self.__height
+            return (self.__height = value)
+
+
+my_rectangle = Rectangle(2, 4)
+print(my_rectangle.__dict__)
+
+my_rectangle.width = 10
+my_rectangle.height = 3
+print(my_rectangle.__dict__)
+
+
+try:
+    my_rectangle = Rectangle(2, -3)
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
+
+try:
+    my_rectangle = Rectangle(-2, 3)
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
+
