@@ -12,4 +12,7 @@ def lookup(obj):
         Returns:
             list[str]: list of attributes and methods
     """
+    for i in dir(obj):
+        print(i, end="\n")
     return dir(obj)
+
