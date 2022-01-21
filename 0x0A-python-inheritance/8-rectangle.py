@@ -20,9 +20,12 @@ class BaseGeometry:
         else:
             return value
 
+
 class Rectangle(BaseGeometry):
     """ A Retangle Class inherits baseGeometry """
     def __init__(self, width, height):
         """ init method """
         self.__width = integer_validator("width", width)
         self.__height = integer_validator("height", height)
+        self.__height = height
+        self.width = width
