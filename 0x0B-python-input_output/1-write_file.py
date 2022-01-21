@@ -9,9 +9,9 @@ def write_file(filename="", text=""):
         with open(filename, encoding='utf-8') as f:
             if type(text) is list:
                 for i in text:
-                    print(f.write(text), end="")
+                    f.write(i)
             else:
-                f.write(text)
+                print(f.write(text), end="")
         return len(text)
     except FileNotFoundError:
         return 0
