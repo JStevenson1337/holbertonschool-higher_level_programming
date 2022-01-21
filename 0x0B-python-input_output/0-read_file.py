@@ -12,5 +12,3 @@ def read_file(filename=""):
             print(f.read(), end="")
     except FileNotFoundError:
         pass
-    finally:
-        f.close()

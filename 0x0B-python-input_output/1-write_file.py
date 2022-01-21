@@ -10,8 +10,8 @@ def write_file(filename="", text=""):
     try:
         with open(filename, mode="w", encoding="utf-8") as f:
             f.write(text)
+            return len(text)
     except IOError:
         pass
-    finally:
-        return len(text)
-        f.close()
+    return 0
+
