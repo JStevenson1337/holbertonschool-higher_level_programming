@@ -14,4 +14,3 @@ def append_write(filename="", text=""):
         return 0
     finally:
         f.close()
-
