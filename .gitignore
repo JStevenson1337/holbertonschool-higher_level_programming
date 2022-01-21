@@ -122,3 +122,4 @@ modules.xml
 
 *main.py
 
+*.pyc

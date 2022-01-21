@@ -7,11 +7,13 @@ def write_file(filename="", text=""):
     """
     try:
         with open(filename, 'w', encoding='utf-8') as f:
-            return f.write(text)
+            if type(text) is list:
+                for i in text:
+                    f.write(i)
+            else:
+                f.write(text)
+        return len(text)
     except FileNotFoundError:
-        return 0
-    except Exception as e:
-        print("Unknown Error: " + str(e))
         return 0
     finally:
         f.close()
