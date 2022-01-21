@@ -8,9 +8,9 @@ def read_file(filename=""):
     Reads a file and prints its content
     """
     try:
-        with open(filename, encoding="utf-8") as f:
+        with open(filename, 'r', encoding="utf-8") as f:
             print(f.read(), end="")
     except FileNotFoundError:
-        raise FileNotFoundError("File not found")
+        pass
     finally:
         f.close()

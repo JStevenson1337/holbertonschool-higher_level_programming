@@ -12,3 +12,6 @@ def append_write(filename="", text=""):
             return f.write(text)
     except IOError:
         return 0
+    finally:
+        f.close()
+
