@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" save_to_json_file.py: save to json file """
 
 
 def write_file(filename="", text=""):
