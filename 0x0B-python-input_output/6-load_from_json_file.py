@@ -10,5 +10,3 @@ def load_from_json_file(filename):
             return json.load(f)
     except FileNotFoundError:
         return None
-    finally:
-        f.close()
