@@ -1,0 +1,4 @@
+>>> MyList = __import__("1-my_list").MyList
+
+>>> MyList.MyList([1, 2, 3])
+MyList([1, 2, 3])
