@@ -13,7 +13,7 @@ def write_file(filename="", text=""):
             else:
                 print(f.write(text), end="")
         return len(text)
-    except FileNotFoundError:
+    except IOError:
         return 0
     finally:
         f.close()
