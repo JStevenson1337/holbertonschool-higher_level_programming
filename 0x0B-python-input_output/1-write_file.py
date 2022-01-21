@@ -10,3 +10,8 @@ def write_file(filename="", text=""):
             return f.write(text)
     except FileNotFoundError:
         return 0
+    except Exception as e:
+        print("Unknown Error: " + str(e))
+        return 0
+    finally:
+        f.close()
