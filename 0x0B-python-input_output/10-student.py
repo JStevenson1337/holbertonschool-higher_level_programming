@@ -8,7 +8,10 @@ def to_json(self, attrs=None):
     """ returns the dictionary description with simple data structure
     (list, dictionary, string, integer and boolean) for JSON
     """
-    if attrs is None:
-        return self.__dict__
+    if type(attrs) is list:
+        for i in attrs:
+            if type(i) is not str:
+                return self.__dict__
+        return {k: v for k, v in self.__dict__.items() if k in attrs}
     else:
-        return {key: value for key, value in self.__dict__.items() if key in attrs}
+        return self.__dict__
