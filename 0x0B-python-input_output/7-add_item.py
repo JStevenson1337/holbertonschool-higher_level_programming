@@ -13,6 +13,7 @@ try:
     my_list = load_json(FILE)
 except (FileNotFoundError, TypeError):
     my_list = []
+
 for i in sys.argv[1:]:
     my_list.append(i)
 
