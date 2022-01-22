@@ -1,11 +1,21 @@
 #!/usr/bin/python3
-""" add_item.py: add an item to a list """
+"""
+    adds all arguments to a Python list,
+    and then save them to a file in JSON format
+"""
 
 
-import json
+import sys
+save_json = __import__("5-save_to_json_file").save_to_json_file
+load_json = __import__("6-load_from_json_file").load_from_json_file
 
+FILE = "add_item.json"
 
-def add_item(list_of_items, item_to_add, position):
-    """ add_item: add an item to a list """
-    list_of_items.insert(position, item_to_add)
-    return list_of_items
+try:
+    my_list = load_json(FILE)
+except (FileNotFoundError, TypeError, ValueError):
+    my_list = []
+for i in sys.argv[1:]:
+    my_list.append(i)
+
+save_json(my_list, FILE)
