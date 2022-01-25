@@ -1,6 +1,6 @@
 # 0x0C. Python - Almost a circle
 
-## Resources:books:
+## Resources
 Read or watch:
 * [args/kwargs](https://yasoob.me/2013/08/04/args-and-kwargs-in-python-explained/)
 * [JSON encoder and decoder](https://docs.python.org/3/library/json.html)
@@ -8,7 +8,7 @@ Read or watch:
 * [Python test cheatsheet](https://www.pythonsheets.com/notes/python-tests.html)
 
 ---
-## Learning Objectives:bulb:
+## Learning Objectives
 What you should learn from this project:
 
 * What is Unit testing and how to implement it in a large project
