@@ -126,4 +126,4 @@ modules.xml
 *.pyc
 0x0B-python-input_output/add_item.json
 file_append.txt
-
+*conflict*
