@@ -103,7 +103,8 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """Assigns an argument to each attribute"""
-        set_args = dict(id=self.id, width=self.width, height=self.height, x=self.x, y=self.y)
+        set_args = dict(id=self.id, width=self.width,
+                        height=self.height, x=self.x, y=self.y)
         if args is not None and len(args) != 0:
             for i, arg in enumerate(args):
                 set_args[list(set_args.keys())[i]] = arg
@@ -118,7 +119,6 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """Returns the dictionary representation of a Rectangle"""
-        print_dict_rectangle = {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height, 'width': self.width}
+        print_dict_rectangle = {'x': self.x, 'y': self.y, 'id': self.id,
+                                'height': self.height, 'width': self.width}
         return dict(print_dict_rectangle)
-
-

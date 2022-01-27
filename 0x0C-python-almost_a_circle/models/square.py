@@ -11,7 +11,8 @@ class Square(Rectangle):
 
     def __str__(self):
         """Return string representation of Square"""
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.size)
+        return "[Square] ({}) {}/{} - {}"\
+            .format(self.id, self.x, self.y, self.size)
 
     @property
     def size(self):
@@ -28,7 +29,8 @@ class Square(Rectangle):
             *args: list of arguments
             **kwargs: dictionary of arguments
         """
-        variables = {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
+        variables = {'id': self.id, 'size': self.size,
+                     'x': self.x, 'y': self.y}
         if args:
             for i, arg in enumerate(args):
                 variables[list(variables.keys())[i]] = arg
@@ -43,4 +45,3 @@ class Square(Rectangle):
     def to_dictionary(self):
         """Return dictionary representation of Square"""
         return {'id': self.id, 'x': self.x, 'size': self.size, 'y': self.y}
-
