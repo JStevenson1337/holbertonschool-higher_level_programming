@@ -84,19 +84,15 @@ class Rectangle(Base):
             print('#' * self.__width)
 
     def update(self, *args, **kwargs):
-        """Assigns an argument to each attribute"""
-        set_args = dict(zip(['id', 'width', 'height', 'x', 'y'], args))
-        if args is not None and len(args) != 0:
-            for i, arg in enumerate(args):
-                set_args[list(set_args.keys())[i]] = arg
+        """ Update attributes of Rectangle """
+        if args:
+            arg_dict = {'id': args[0], 'width': args[1], 'height': args[2],
+                        'x': args[3], 'y': args[4]}
+            for key, value in arg_dict.items():
+                setattr(self, key, value)
         else:
             for key, value in kwargs.items():
-                set_args[key] = value
-        self.id = set_args['id']
-        self.width = set_args['width']
-        self.height = set_args['height']
-        self.x = set_args['x']
-        self.y = set_args['y']
+                setattr(self, key, value)
 
     @property
     def to_dictionary(self):

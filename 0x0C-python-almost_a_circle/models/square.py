@@ -21,26 +21,39 @@ class Square(Rectangle):
             self.id, self.width, self.x, self.y)
 
     def update(self, *args, **kwargs):
-        """Update Square
-        Args:
-            *args: list of arguments
-            **kwargs: dictionary of arguments
-        """
+        """Update Square attributes"""
+        arg_dict = { "id": self.id, "size": self.size, "x": self.x, "y": self.y }
         if args:
-            update_dict = {'id': args[0], 'size': args[1], 'x': args[2],
-                           'y': args[3]}
+            for i, arg in enumerate(args):
+                arg_dict[list(arg_dict.keys())[i]] = arg
         else:
-            update_dict = kwargs
-        for key, value in update_dict.items():
-            if key == 'id':
-                self.id = value
-            if key == 'size':
-                self.size = value
-            if key == 'x':
-                self.x = value
-            if key == 'y':
-                self.y = value
+            for key, value in kwargs.items():
+                arg_dict[key] = value
+        self.id = arg_dict["id"]
+        self.size = arg_dict["size"]
+        self.x = arg_dict["x"]
+        self.y = arg_dict["y"]
+
+    def to_json_string(self):
+        """Return dictionary representation of Square"""
+        return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
+
+    @property
+    def size(self):
+        """Getter for size"""
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """Setter for size"""
+        self.width = value
+        self.height = value
+
+    def area(self):
+        """Return area of Square"""
+        return self.width * self.height
 
     def to_dictionary(self):
         """Return dictionary representation of Square"""
         return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
+
