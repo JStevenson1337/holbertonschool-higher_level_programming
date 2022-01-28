@@ -166,3 +166,4 @@ class TestClassSquare(unittest.TestCase):
         self.assertEqual(s1.area(), 100)
         s2 = Square(10, 0, 0, 12)
         self.assertEqual(s2.area(), 100)
+        

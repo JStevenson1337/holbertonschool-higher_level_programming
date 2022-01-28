@@ -47,3 +47,4 @@ class TestClassRectangle(unittest.TestCase):
         test y
         """
         self.assertEqual(self.inst.y, 4)
+        
