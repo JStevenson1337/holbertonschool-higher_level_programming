@@ -1,3 +1,8 @@
 *.main*
 *pycache*
+*.gitignore
+*.dist*
+*.idea*
+*.csv
+*.json
 
