@@ -3,7 +3,6 @@
 Tests are done for each method of the class"""
 import pep8
 import unittest
-import io
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square

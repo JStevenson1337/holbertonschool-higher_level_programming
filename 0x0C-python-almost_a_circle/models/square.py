@@ -13,6 +13,7 @@ class Square(Rectangle):
             y: y coordinate of Square
             id: id of Square
         """
+        self.size = size
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
@@ -22,17 +23,14 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """Update Square attributes"""
-        arg_dict = { "id": self.id, "size": self.size, "x": self.x, "y": self.y }
         if args:
-            for i, arg in enumerate(args):
-                arg_dict[list(arg_dict.keys())[i]] = arg
+            arg_dict = {'id': args[0], 'size': args[1], 'x': args[2],
+                        'y': args[3]}
+            for key, value in arg_dict.items():
+                setattr(self, key, value)
         else:
             for key, value in kwargs.items():
-                arg_dict[key] = value
-        self.id = arg_dict["id"]
-        self.size = arg_dict["size"]
-        self.x = arg_dict["x"]
-        self.y = arg_dict["y"]
+                setattr(self, key, value)
 
     def to_json_string(self):
         """Return dictionary representation of Square"""
@@ -56,4 +54,3 @@ class Square(Rectangle):
     def to_dictionary(self):
         """Return dictionary representation of Square"""
         return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
-        
