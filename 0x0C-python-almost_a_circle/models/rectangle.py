@@ -8,14 +8,7 @@ class Rectangle(Base):
     """Rectangle class"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        ("Instantiation method\n"
-         "    Args:\n"
-         "        width: width of the rectangle\n"
-         "        height: height of the rectangle\n"
-         "        x: x position of the rectangle\n"
-         "        y: y position of the rectangle\n"
-         "        id: id of the rectangle\n"
-         "    ")
+        """Initializes Rectangle"""
         self.width = width
         self.height = height
         self.x = x
@@ -30,12 +23,11 @@ class Rectangle(Base):
     @width.setter
     def width(self, width):
         """Width setter"""
-        if type(width) == int:
-            if width <= 0:
-                raise ValueError("width must be > 0")
-            self.__width = width
-            return
-        raise TypeError("width must be an integer")
+        if type(width) != int:
+            raise TypeError("width must be an integer")
+        if width <= 0:
+            raise ValueError("width must be > 0")
+        self.__width = width
 
     @property
     def height(self):
@@ -45,12 +37,11 @@ class Rectangle(Base):
     @height.setter
     def height(self, height):
         """Height setter"""
-        if type(height) == int:
-            if height <= 0:
-                raise ValueError("height must be > 0")
-            self.__height = height
-            return
-        raise TypeError("height must be an integer")
+        if type(height) != int:
+            raise TypeError("height must be an integer")
+        if height <= 0:
+            raise ValueError("height must be > 0")
+        self.__height = height
 
     @property
     def x(self):
@@ -81,7 +72,7 @@ class Rectangle(Base):
         self.__y = y
 
     def area(self):
-        """Return the rectangle's Area"""
+        """Return the area of the rectangle"""
         return self.__width * self.__height
 
     def display(self):
@@ -92,19 +83,9 @@ class Rectangle(Base):
             print(' ' * self.__x, end='')
             print('#' * self.__width)
 
-    def __str__(self):
-        """returns [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
-        idd = self.id
-        x = self.__x
-        y = self.__y
-        w = self.__width
-        h = self.__height
-        return '[Rectangle] ({}) {}/{} - {}/{}'.format(idd, x, y, w, h)
-
     def update(self, *args, **kwargs):
         """Assigns an argument to each attribute"""
-        set_args = dict(id=self.id, width=self.width,
-                        height=self.height, x=self.x, y=self.y)
+        set_args = dict(zip(['id', 'width', 'height', 'x', 'y'], args))
         if args is not None and len(args) != 0:
             for i, arg in enumerate(args):
                 set_args[list(set_args.keys())[i]] = arg
@@ -117,8 +98,13 @@ class Rectangle(Base):
         self.x = set_args['x']
         self.y = set_args['y']
 
+    @property
     def to_dictionary(self):
-        """Returns the dictionary representation of a Rectangle"""
-        print_dict_rectangle = {'x': self.x, 'y': self.y, 'id': self.id,
-                                'height': self.height, 'width': self.width}
-        return dict(print_dict_rectangle)
+        """Return dictionary representation of Rectangle"""
+        return {'x': self.x, 'y': self.y, 'id': self.id,
+                'height': self.height, 'width': self.width}
+
+    def __str__(self):
+        """Return string representation of Rectangle"""
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.x, self.y, self.width, self.height))

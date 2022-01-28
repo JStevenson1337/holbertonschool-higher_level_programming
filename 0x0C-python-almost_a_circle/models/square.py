@@ -6,22 +6,19 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """Square class"""
     def __init__(self, size, x=0, y=0, id=None):
-        """Initialize Square"""
+        """Initialize Square
+        Args:
+            size: size of Square
+            x: x coordinate of Square
+            y: y coordinate of Square
+            id: id of Square
+        """
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """Return string representation of Square"""
-        return "[Square] ({}) {}/{} - {}"\
-            .format(self.id, self.x, self.y, self.size)
-
-    @property
-    def size(self):
-        """Getter for size"""
-        return self.width
-
-    @size.setter
-    def size(self, value):
-        self.width = value
+        return "[Square] ({}) {}/{} - {}".format(
+            self.id, self.width, self.x, self.y)
 
     def update(self, *args, **kwargs):
         """Update Square
@@ -29,19 +26,21 @@ class Square(Rectangle):
             *args: list of arguments
             **kwargs: dictionary of arguments
         """
-        variables = {'id': self.id, 'size': self.size,
-                     'x': self.x, 'y': self.y}
         if args:
-            for i, arg in enumerate(args):
-                variables[list(variables.keys())[i]] = arg
+            update_dict = {'id': args[0], 'size': args[1], 'x': args[2],
+                           'y': args[3]}
         else:
-            for key, value in kwargs.items():
-                variables[key] = value
-        self.id = variables['id']
-        self.size = variables['size']
-        self.x = variables['x']
-        self.y = variables['y']
+            update_dict = kwargs
+        for key, value in update_dict.items():
+            if key == 'id':
+                self.id = value
+            if key == 'size':
+                self.size = value
+            if key == 'x':
+                self.x = value
+            if key == 'y':
+                self.y = value
 
     def to_dictionary(self):
         """Return dictionary representation of Square"""
-        return {'id': self.id, 'x': self.x, 'size': self.size, 'y': self.y}
+        return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
