@@ -1,14 +1,14 @@
-# !/usr/bin/python3
+#!/usr/bin/python3
 """ Base class for all models """
 import json
 
 
 class Base:
-    """ Base class"""
+    """ Base class """
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Instantiation method
+        """ Instantiation method
         Args:
             id: id of the instance
         """
@@ -20,7 +20,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """Return the JSON string representation of list_dictionaries
+        """ Return the JSON string representation of list_dictionaries
         Args:
             list_dictionaries: list of dictionaries
         """
@@ -30,7 +30,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Write the JSON string representation of list_objs to a file
+        """ Write the JSON string representation of list_objs to a file
         Args:
             list_objs: list of instances
         """
@@ -44,7 +44,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """Return the list of the JSON string representation json_string
+        """ Return the list of the JSON string representation json_string
         Args:
             json_string: string
         """
@@ -54,7 +54,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """Return an instance with all attributes already set
+        """ Return an instance with all attributes already set
         Args:
 
         """
@@ -67,11 +67,11 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """Return a list of instances"""
+        """ Return a list of instances"""
         filename = cls.__name__ + ".json"
         try:
             with open(filename, "r") as f:
                 return [cls.create(**d) for d in cls.from_json_string(f.read())]
         except FileNotFoundError:
             return []
-            
+

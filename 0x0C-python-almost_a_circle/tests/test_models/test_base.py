@@ -73,4 +73,3 @@ class NewTest(unittest.TestCase):
         """
         with self.assertRaises(TypeError):
             b = Base(1, 1)
-            
