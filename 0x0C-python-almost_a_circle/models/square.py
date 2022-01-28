@@ -22,15 +22,17 @@ class Square(Rectangle):
             self.id, self.width, self.x, self.y)
 
     def update(self, *args, **kwargs):
-        """Update Square attributes"""
+        args_dict = { "id": self.id, "size": self.size, "x": self.x, "y": self.y }
         if args:
-            arg_dict = {'id': args[0], 'size': args[1], 'x': args[2],
-                        'y': args[3]}
-            for key, value in arg_dict.items():
-                setattr(self, key, value)
+            for i, arg in enumerate(args):
+                args_dict[list(args_dict.keys())[i]] = arg
         else:
             for key, value in kwargs.items():
-                setattr(self, key, value)
+                args_dict[key] = value
+        self.id = args_dict["id"]
+        self.size = args_dict["size"]
+        self.x = args_dict["x"]
+        self.y = args_dict["y"]
 
     def to_json_string(self):
         """Return dictionary representation of Square"""
