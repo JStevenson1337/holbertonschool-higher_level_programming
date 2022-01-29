@@ -25,6 +25,15 @@ class TestClassSquare(unittest.TestCase):
         """
         Base._nb_objects = 0
 
+    def test_id(self):
+        """
+        Test that the id of the square is correct
+        """
+        s1 = Square(10)
+        self.assertEqual(s1.id, 1)
+        s2 = Square(10, 0, 0, 12)
+        self.assertEqual(s2.id, 12)
+
     def test_width(self):
         """
         Test that the width of the square is correct
@@ -41,6 +50,21 @@ class TestClassSquare(unittest.TestCase):
         self.assertEqual(type(s1.width), int)
         s2 = Square(10, 0, 0, 12)
         self.assertEqual(type(s2.width), int)
+
+    def test_raise_width(self):
+        """
+        Test that the width of the square is correct
+        """
+        with self.assertRaises(TypeError, msg="width must be an integer"):
+            s1 = Square("10")
+        with self.assertRaises(TypeError, msg="width must be an integer"):
+            s2 = Square(10, "0", 0, 12)
+        with self.assertRaises(TypeError, msg="width must be an integer"):
+            s3 = Square(10, 0, "0", 12)
+        with self.assertRaises(TypeError, msg="width must be an integer"):
+            s4 = Square(10, 0, 0, "12")
+        with self.assertRaises(TypeError, msg="height must be an integer"):
+            s5 = Square(10, 0, 0, 12, "hi")
 
     def test_height(self):
         """
@@ -60,16 +84,18 @@ class TestClassSquare(unittest.TestCase):
         s2 = Square(10, 0, 0, 12)
         self.assertEqual(type(s2.height), int)
 
-    def test_raise_size_x_y(self):
+    def test_raise_height(self):
         """
         Test that the height of the square is correct
         """
-        with self.assertRaises(TypeError, msg="width must be an integer"):
-            s1 = Square("10")
-        with self.assertRaises(TypeError, msg="x must be an integer"):
-            s2 = Square(10, "0")
-        with self.assertRaises(TypeError, msg="y must be an integer"):
-            s3 = Square(10, 0, "0")
+        with self.assertRaises(TypeError, msg="height must be an integer"):
+            s1 = Square(10, "10")
+        with self.assertRaises(TypeError, msg="height must be an integer"):
+            s2 = Square(10, 0, "0", 12)
+        with self.assertRaises(TypeError, msg="height must be an integer"):
+            s3 = Square(10, 0, 0, "12")
+        with self.assertRaises(TypeError, msg="height must be an integer"):
+            s4 = Square(10, 0, 0, 12, "hi")
 
     def test_x(self):
         """
@@ -94,18 +120,3 @@ class TestClassSquare(unittest.TestCase):
         self.assertEqual(s1.size, 3)
         with self.assertRaises(ValueError, msg="height must be an integer"):
             s1 = Square(-10)
-
-
-class NewTest(unittest.TestCase):
-    def test_id(self):
-        """
-        Test that the id of the square is correct
-        """
-        s1 = Square(10)
-        self.assertEqual(s1.id, 1)
-        s2 = Square(10, 0, 0, 12)
-        self.assertEqual(s2.id, 12)
-
-
-if __name__ == "__main__":
-    unittest.main()

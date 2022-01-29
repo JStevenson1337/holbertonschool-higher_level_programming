@@ -242,5 +242,4 @@ class TestBase_save_to_file(unittest.TestCase):
 
 
 if __name__ == "__main__":
-
-
+    unittest.main()
