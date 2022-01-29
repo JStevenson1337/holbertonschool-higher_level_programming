@@ -52,10 +52,11 @@ class Rectangle(Base):
     def x(self, x):
         """x setter"""
         if type(x) != int:
-            raise TypeError("x must be an integer")
-        if x < 0:
-            raise ValueError("x must be >= 0")
-        self.__x = x
+            raise TypeError('x must be an integer')
+        if x >= 0:
+            self.__x = x
+            return
+        raise ValueError("x must be >= 0")
 
     @property
     def y(self):
@@ -67,9 +68,10 @@ class Rectangle(Base):
         """y setter"""
         if type(y) != int:
             raise TypeError("y must be an integer")
-        if y < 0:
-            raise ValueError("y must be >= 0")
-        self.__y = y
+        if y >= 0:
+            self.__y = y
+            return
+        raise ValueError("y must be >= 0")
 
     def area(self):
         """Return the area of the rectangle"""
@@ -109,19 +111,19 @@ class Rectangle(Base):
         Raises: TypeError if Value is not int
                 ValueError if value <=0
         """
-        if type(value) is not int:
-            raise TypeError("{:s} must be an integer".format(name))
-        if value < 1:
-            raise ValueError("{:s} must be > 0".format(name))
-        return value
+        if type(value) is int:
+            if value < 1:
+                raise ValueError("{:s} must be > 0".format(name))
+            return value
+        raise TypeError("{:s} must be an integer".format(name))
 
     def xy_validator(self, name, value):
         """
         Raises: TypeError if Value is not int
                 ValueError if value <=0
         """
-        if type(value) is not int:
-            raise TypeError("{:s} must be an integer".format(name))
-        if value < 0:
-            raise ValueError("{:s} must be >= 0".format(name))
-        return value
+        if type(value) is int:
+            if value < 0:
+                raise ValueError("{:s} must be >= 0".format(name))
+            return value
+        raise TypeError("{:s} must be an integer".format(name))

@@ -26,14 +26,14 @@ class Square(Rectangle):
         """
         updates attributes
         """
-        attrs, i = ['id', 'size', 'x', 'y'], 0
-        if args:
+        if not args:
+            for key in kwargs:
+                setattr(self, key, kwargs[key])
+        else:
+            attrs, i = ['id', 'size', 'x', 'y'], 0
             for value in args:
                 setattr(self, attrs[i], value)
                 i += 1
-        else:
-            for key in kwargs:
-                setattr(self, key, kwargs[key])
 
     def __str__(self):
         """custom __str__ method for Square
