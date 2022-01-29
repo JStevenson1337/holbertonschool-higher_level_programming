@@ -75,4 +75,3 @@ class Base:
                 return [cls.create(**i) for i in listd]
         except Exception:
             return []
-
