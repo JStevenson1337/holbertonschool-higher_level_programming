@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Unittesting for the Square module/class
 Tests are done for each method of the class"""
 import pep8
