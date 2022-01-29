@@ -25,22 +25,22 @@ class Base:
             list_dictionaries: list of dictionaries
         """
         if list_dictionaries is None or len(list_dictionaries) == 0:
-            return "[]"
+            list_dictionaries = []
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """ Write the JSON string representation of list_objs to a file
-        Args:
-            list_objs: list of instances
         """
-        if list_objs is None or len(list_objs) == 0:
-            return
+         writes the JSON string representation of list_objs to a file
+        """
         filename = cls.__name__ + ".json"
-        with open(filename, "w") as f:
-            if cls.__name__ == "Rectangle":
-                list_objs = [obj.to_dictionary() for obj in list_objs]
-            f.write(cls.to_json_string(list_objs))
+        j_object = []
+        with open(filename, "w") as file:
+            if list_objs is None:
+                file.write("[]")
+            else:
+                j_object = [i.to_dictionary() for i in list_objs]
+                file.write(Base.to_json_string(j_object))
 
     @staticmethod
     def from_json_string(json_string):
@@ -48,7 +48,7 @@ class Base:
         Args:
             json_string: string
         """
-        if json_string is None or len(json_string) == 0:
+        if json_string is None or len(json_string) <= 0:
             return []
         return json.loads(json_string)
 
@@ -67,11 +67,12 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """ Return a list of instances"""
+        """ Returns a list of instances """
         filename = cls.__name__ + ".json"
         try:
-            with open(filename, "r") as f:
-                return [cls.create(**d) for d in cls.from_json_string(f.read())]
-        except FileNotFoundError:
+            with open(filename, "r") as file:
+                listd = cls.from_json_string(file.read())
+                return [cls.create(**i) for i in listd]
+        except Exception:
             return []
 

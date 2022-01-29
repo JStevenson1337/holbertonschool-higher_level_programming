@@ -9,10 +9,10 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initializes Rectangle"""
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self.width = self.hw_validator("width", width)
+        self.height = self.hw_validator("height", height)
+        self.x = self.xy_validator("x", x)
+        self.y = self.xy_validator("y", y)
         super().__init__(id)
 
     @property
@@ -103,3 +103,25 @@ class Rectangle(Base):
         """Return string representation of Rectangle"""
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.x, self.y, self.width, self.height))
+
+    def hw_validator(self, name, value):
+        """
+        Raises: TypeError if Value is not int
+                ValueError if value <=0
+        """
+        if type(value) is not int:
+            raise TypeError("{:s} must be an integer".format(name))
+        if value < 1:
+            raise ValueError("{:s} must be > 0".format(name))
+        return value
+
+    def xy_validator(self, name, value):
+        """
+        Raises: TypeError if Value is not int
+                ValueError if value <=0
+        """
+        if type(value) is not int:
+            raise TypeError("{:s} must be an integer".format(name))
+        if value < 0:
+            raise ValueError("{:s} must be >= 0".format(name))
+        return value
