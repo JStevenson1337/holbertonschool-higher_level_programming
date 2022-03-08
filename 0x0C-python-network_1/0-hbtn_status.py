@@ -4,8 +4,6 @@
 
 if __name__ == "__main__":
     import urllib.request as rq
-
-    """ Function that reads the content of a URL """
     req = rq.Request("https://intranet.hbtn.io/status")
     with rq.urlopen(req) as response:
         site = response.read()
