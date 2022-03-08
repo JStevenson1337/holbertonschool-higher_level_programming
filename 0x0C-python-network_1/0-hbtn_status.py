@@ -2,7 +2,7 @@
 """ query the status of a given url """
 
 
-def url_read():
+def hbtn_status(url):
     """ Function that reads the content of a URL """
     from urllib.request import urlopen, Request
     req = Request("http://intranet.hbtn.io/status")
@@ -15,4 +15,4 @@ def url_read():
 
 
 if __name__ == "__main__":
-    url_read()
+    hbtn_status("http://intranet.hbtn.io/status")
