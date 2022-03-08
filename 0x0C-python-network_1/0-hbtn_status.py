@@ -2,7 +2,7 @@
 """ query the status of a given url """
 
 
-def url_read(url):
+def url_read():
     """ Function that reads the content of a URL """
     import urllib.request
     req = urllib.request.Request("http://intranet.hbtn.io/status")
@@ -15,5 +15,5 @@ def url_read(url):
 
 
 if __name__ == "__main__":
-    url_read("http://intranet.hbtn.io/status")
+    url_read()
 
