@@ -1,15 +1,19 @@
 #! /usr/bin/env python3
+""" query the status of a given url """
 
-import urllib.request
 
+def url_read(url):
+    """ Function that reads the content of a URL """
+    import urllib.request
+    req = urllib.request.Request("http://intranet.hbtn.io/status")
+    with urllib.request.urlopen(req) as response:
+        site = response.read()
+        print("Body response:")
+        print("\t- type: {}".format(type(site)))
+        print("\t- content: {}".format(site))
+        print("\t- utf8 content: {}".format(site.decode("utf-8")))
 
-req = urllib.request.Request('https://intranet.hbtn.io/status')
-with urllib.request.urlopen(req) as response:
-    the_page = response.read()
-    print('Body response:')
-    print('\t- type:', type(the_page))
-    print('\t- content:', the_page)
-    print('\t- utf8 content:', the_page.decode('utf-8'))
 
 if __name__ == "__main__":
-    pass
+    url_read("http://intranet.hbtn.io/status")
+
