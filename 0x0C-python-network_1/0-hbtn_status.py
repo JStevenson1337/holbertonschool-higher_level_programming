@@ -4,9 +4,9 @@
 
 def url_read():
     """ Function that reads the content of a URL """
-    import urllib.request
-    req = urllib.request.Request("http://intranet.hbtn.io/status")
-    with urllib.request.urlopen(req) as response:
+    from urllib.request import urlopen, Request
+    req = Request("http://intranet.hbtn.io/status")
+    with urlopen(req) as response:
         site = response.read()
         print("Body response:")
         print("\t- type: {}".format(type(site)))
