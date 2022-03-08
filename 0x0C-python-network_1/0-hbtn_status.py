@@ -9,9 +9,9 @@ def hbtn_status():
     with urlopen(req) as response:
         site = response.read()
         print("Body response:")
-        print("\t- type: {}".format(type(site)))
-        print("\t- content: {}".format(site))
-        print("\t- utf8 content: {}".format(site.decode("utf-8")))
+        print(f"\t- type: {type(site)}")
+        print(f"\t- content: {site}")
+        print(f"\t- utf8 content: {site.decode('utf-8')}")
 
 
 if __name__ == "__main__":
