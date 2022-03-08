@@ -16,4 +16,3 @@ def url_read():
 
 if __name__ == "__main__":
     url_read()
-
