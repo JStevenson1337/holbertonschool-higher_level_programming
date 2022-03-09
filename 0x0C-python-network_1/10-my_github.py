@@ -15,4 +15,7 @@ if __name__ == '__main__':
     password = argv[2]
 
     r = requests.get(url, auth=(username, password))
-    print(r.json()['id'])
+    try:
+        print(r.json()['id'])
+    except:  # noqa
+        print("None")

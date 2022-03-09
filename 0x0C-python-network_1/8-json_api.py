@@ -20,5 +20,5 @@ if __name__ == '__main__':
     else:
         try:
             print(r.json()['name'])
-        except:
+        except:  # noqa
             print("Not a valid JSON")
