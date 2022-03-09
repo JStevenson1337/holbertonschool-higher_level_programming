@@ -6,11 +6,12 @@
 """
 
 if __name__ == '__main__':
-    import urllib.request as req
-    import sys
+    import requests
+    from sys import argv
 
-    try:
-        with req.urlopen(sys.argv[1]) as response:
-            print(response.read().decode('utf-8'))
-    except: # noqa
-        print('Error code: {}'.format(response.code))
+    url = argv[1]
+    r = requests.get(url)
+    if r.status_code == 400:
+        print(f"Error code: {r.status_code}")
+    else:
+        print(r.text)

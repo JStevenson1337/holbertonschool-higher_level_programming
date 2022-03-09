@@ -7,16 +7,18 @@
 """
 
 if __name__ == '__main__':
-    import urllib.request as request
-    import sys
+    import requests
+    from sys import argv
 
-    if len(sys.argv) == 2:
-        q = sys.argv[1]
-        url = 'http://0.0.0.0:5000/search_user'
-        q = {'q': q}
-        post = request.Request(url, data=q)
-        with request.urlopen(post) as response:
-            data = response.read()
-            print(data.decode('utf-8'))
+    url = 'http://0.0.0.0:5000/search_user'
+    q = argv[1]
+    if not q or len(q) == 0:
+        q = ""
+    r = requests.post(url, data={'q': q})
+    if r is None:
+        print("No Result")
     else:
-        print('No result')
+        try:
+            print(r.json()['name'])
+        except:
+            print("Not a valid JSON")
