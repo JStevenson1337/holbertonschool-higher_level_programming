@@ -8,10 +8,12 @@
 
 if __name__ == "__main__":
     import urllib.request as request
+    import urllib3 as error
     import sys
 
+    url = sys.argv[1]
     try:
-        with request.urlopen(sys.argv[1]) as response:
-            print(response.read().decode('utf-8'))
-    except: # noqa
-        print("Error code: {}".format(response.code))
+        with request.urlopen(url) as response:
+            print(str(response.read(), 'utf-8'))
+    except error as e:
+        print("Error code: {}".format(e.code))

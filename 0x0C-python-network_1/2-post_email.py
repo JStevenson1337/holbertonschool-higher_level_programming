@@ -13,5 +13,5 @@ if __name__ == "__main__":
     url = sys.argv[1]
     email = sys.argv[2]
     payload = {'email': email}
-    r = request.Request(url, data=str(payload).encode('utf-8'))
-    print(request.urlopen(r).read().decode('utf-8'))
+    with request.urlopen(url, data=bytes(str(payload), 'utf-8')) as response:
+        print(str(response.read(), 'utf-8'))
