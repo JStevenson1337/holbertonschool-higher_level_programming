@@ -1,8 +1,5 @@
 #!/usr/bin/node
-
-function myFunction() {
-  console.log("C is fun");
-  console.log("Python is cool");
-  console.log("Javascript is amazing");
-}
-myFunction();
+// 1-multi_languages.js
+console.log("C is fun");
+console.log("Python is cool");
+console.log("Javascript is amazing");
