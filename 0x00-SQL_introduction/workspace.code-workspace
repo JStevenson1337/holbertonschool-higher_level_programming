@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"sqltools.connections": [
+			{
+				"mysqlOptions": {
+					"authProtocol": "default"
+				},
+				"previewLimit": 50,
+				"server": "10.10.120.39",
+				"port": 3306,
+				"driver": "MySQL",
+				"name": "DB",
+				"group": "School",
+				"username": "root",
+				"password": "Natasha5&&9",
+				"database": "hbtn_0c_0"
+			}
+		]
+	}
+}
